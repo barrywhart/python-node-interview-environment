@@ -20,3 +20,16 @@ To interact with the Node app using Python:
 ```shell
 python3 -c "import urllib.request; print(urllib.request.urlopen('http://localhost:5173').read())"
 ```
+
+# Node test-app
+
+workspace/test-app was created by running:
+```shell
+npm create vite@latest test-app
+```
+
+Launch it by running:
+```shell
+cd test-app
+npm run dev
+```
