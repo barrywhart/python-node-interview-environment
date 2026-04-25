@@ -1,0 +1,13 @@
+services:
+  interview:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./workspace:/workspace
+    ports:
+      - "3000:3000"   # typical React dev server port
+      - "5173:5173"   # Vite default, common in newer React setups
+      - "8000:8000"   # likely Python backend port
+      - "8080:8080"   # alternative backend port
+    working_dir: /workspace
