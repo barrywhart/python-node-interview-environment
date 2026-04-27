@@ -6,7 +6,8 @@ services:
     volumes:
       - ./workspace:/workspace
     environment:
-      # Configure Node web server to open port publicly (to make it available from the Mac host)
+      # Configure Node and Python web servers to serve on a public port (to make them available
+      # from the Mac host).
       - HOST=0.0.0.0
       # Configure Node web server to access the API server on this port. The default port
       # (5000) is always in use on Macs.
