@@ -5,9 +5,14 @@ services:
     tty: true
     volumes:
       - ./workspace:/workspace
+    environment:
+      # Configure Node web server to open port publicly (to make it available from the Mac host)
+      - HOST=0.0.0.0
+      # Configure Node web server to access the API server on this port. The default port
+      # (5000) is always in use on Macs.
+      # https://stackoverflow.com/questions/72369320/why-always-something-is-running-at-port-5000-on-my-mac
+      - API_PORT=8111
     ports:
-      - "3000:3000"   # typical React dev server port
-      - "5173:5173"   # Vite default, common in newer React setups
-      - "8000:8000"   # likely Python backend port
-      - "8080:8080"   # alternative backend port
-    working_dir: /workspace
+      - "8110:3000"   # React dev server port
+      - "8111:8111"   # Python API server port (matches API_PORT above)
+    working_dir: /workspace/python-web-interview
