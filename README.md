@@ -4,7 +4,7 @@ Docker Compose environment for secure coding interviews
 To use this environment, first clone the repo, then:
 
 ```shell
-cd interview-docker
+cd python-node-interview-environment
 docker compose up -d
 docker compose exec interview bash
 ```
